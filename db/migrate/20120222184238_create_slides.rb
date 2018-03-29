@@ -1,4 +1,4 @@
-class CreateSlides < ActiveRecord::Migration
+class CreateSlides < ActiveRecord::Migration[5.1]
   def change
     create_table :spree_slides do |t|
       t.string :name
@@ -9,6 +9,11 @@ class CreateSlides < ActiveRecord::Migration
       t.string :image_content_type
       t.integer :image_file_size
       t.datetime :image_updated_at
+
+      t.string :image_mobile_file_name
+      t.string :image_mobile_content_type
+      t.integer :image_mobile_file_size
+      t.datetime :image_mobile_updated_at
 
       t.timestamps
     end
